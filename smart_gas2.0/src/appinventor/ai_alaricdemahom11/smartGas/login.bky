@@ -1,0 +1,234 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="component_event" id="4BmC_!L[+GMrmm:LxT|t" x="-726" y="-522">
+    <mutation component_type="Button" is_generic="false" instance_name="Button1" event_name="Click"></mutation>
+    <field name="COMPONENT_SELECTOR">Button1</field>
+    <statement name="DO">
+      <block type="controls_if" id="Nx0I*D,Wptx_Ud8@?vC}">
+        <value name="IF0">
+          <block type="logic_compare" id="NzbcI`cP{X/c4iJfcs!U">
+            <field name="OP">NEQ</field>
+            <value name="A">
+              <block type="component_set_get" id="RwffsrH^dBcIFvHYP`$r">
+                <mutation component_type="TextBox" set_or_get="get" property_name="Text" is_generic="false" instance_name="TextBox1"></mutation>
+                <field name="COMPONENT_SELECTOR">TextBox1</field>
+                <field name="PROP">Text</field>
+              </block>
+            </value>
+            <value name="B">
+              <block type="text" id="/M[F$3;lk#:?+L0:{EVe">
+                <field name="TEXT"></field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <statement name="DO0">
+          <block type="lexical_variable_set" id="D;+{,LJrfZl!L(ZN:+6/">
+            <field name="VAR">global username</field>
+            <value name="VALUE">
+              <block type="component_set_get" id="mhjc+L7nFOiqiU~W[x%3">
+                <mutation component_type="TextBox" set_or_get="get" property_name="Text" is_generic="false" instance_name="TextBox1"></mutation>
+                <field name="COMPONENT_SELECTOR">TextBox1</field>
+                <field name="PROP">Text</field>
+              </block>
+            </value>
+          </block>
+        </statement>
+        <next>
+          <block type="controls_if" id="+}04hjy?rA4s,pka9w!|">
+            <value name="IF0">
+              <block type="logic_compare" id="$o/t.o^UW$tB]io1uXs`">
+                <field name="OP">NEQ</field>
+                <value name="A">
+                  <block type="component_set_get" id="@Ub+yK;[:~+tRIlNYd07">
+                    <mutation component_type="PasswordTextBox" set_or_get="get" property_name="Text" is_generic="false" instance_name="PasswordTextBox1"></mutation>
+                    <field name="COMPONENT_SELECTOR">PasswordTextBox1</field>
+                    <field name="PROP">Text</field>
+                  </block>
+                </value>
+                <value name="B">
+                  <block type="text" id="Ozo5I~$@@r|4BYmgl+R,">
+                    <field name="TEXT"></field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <statement name="DO0">
+              <block type="lexical_variable_set" id="Gp0b}j/T:5(7/3ihI8KL">
+                <field name="VAR">global password</field>
+                <value name="VALUE">
+                  <block type="component_set_get" id="|Jyg?i)P0*-H3%QvnIZY">
+                    <mutation component_type="PasswordTextBox" set_or_get="get" property_name="Text" is_generic="false" instance_name="PasswordTextBox1"></mutation>
+                    <field name="COMPONENT_SELECTOR">PasswordTextBox1</field>
+                    <field name="PROP">Text</field>
+                  </block>
+                </value>
+              </block>
+            </statement>
+            <next>
+              <block type="component_method" id="X2$W?^Q}|1{cN5JA}*=_">
+                <mutation component_type="FirebaseDB" method_name="GetValue" is_generic="false" instance_name="FirebaseDB1"></mutation>
+                <field name="COMPONENT_SELECTOR">FirebaseDB1</field>
+                <value name="ARG0">
+                  <block type="lexical_variable_get" id="H9.MwH|bFFh~qKzqLjd@">
+                    <field name="VAR">global username</field>
+                  </block>
+                </value>
+                <value name="ARG1">
+                  <block type="text" id="}8yergA90!BwS$YwW9+l">
+                    <field name="TEXT">nan</field>
+                  </block>
+                </value>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="global_declaration" id="IS)^i_DEi=zgJ$C!83|Z" x="-207" y="-415">
+    <field name="NAME">username</field>
+    <value name="VALUE">
+      <block type="text" id="H+um7IlA$]:yy]aqDd:+">
+        <field name="TEXT"></field>
+      </block>
+    </value>
+  </block>
+  <block type="global_declaration" id="LkchG27kNj()4CCjN5-$" x="-187" y="-375">
+    <field name="NAME">password</field>
+    <value name="VALUE">
+      <block type="text" id="Ydx9iaj^N}E;Uvm[EN8j">
+        <field name="TEXT"></field>
+      </block>
+    </value>
+  </block>
+  <block type="component_event" id="te/~Y(;p-v{6ub.Cdq+6" x="-724" y="-219">
+    <mutation component_type="FirebaseDB" is_generic="false" instance_name="FirebaseDB1" event_name="GotValue"></mutation>
+    <field name="COMPONENT_SELECTOR">FirebaseDB1</field>
+    <statement name="DO">
+      <block type="controls_if" id="Rh=6CpMNHG^d/JW{vFnQ">
+        <mutation elseif="1"></mutation>
+        <value name="IF0">
+          <block type="logic_operation" id="Qe@|C2KrJK0/sJxQ6e1h">
+            <field name="OP">AND</field>
+            <value name="A">
+              <block type="logic_compare" id="qi{rhh6fs0j+~eNMrIjv">
+                <field name="OP">EQ</field>
+                <value name="A">
+                  <block type="lexical_variable_get" id="7=V7^349n3Ge^`fIg}B@">
+                    <field name="VAR">global username</field>
+                  </block>
+                </value>
+                <value name="B">
+                  <block type="lexical_variable_get" id="/UaatwiZ}?sir`Vd.x1@">
+                    <mutation>
+                      <eventparam name="tag"></eventparam>
+                    </mutation>
+                    <field name="VAR">tag</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <value name="B">
+              <block type="logic_compare" id="d9@-:!yRE3l?cIMZxDh9">
+                <field name="OP">EQ</field>
+                <value name="A">
+                  <block type="lexical_variable_get" id="Z[I4wW~?uT%*2YXDix[r">
+                    <field name="VAR">global password</field>
+                  </block>
+                </value>
+                <value name="B">
+                  <block type="lexical_variable_get" id="3*JADUn6J5/({`i)9r/#">
+                    <mutation>
+                      <eventparam name="value"></eventparam>
+                    </mutation>
+                    <field name="VAR">value</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+          </block>
+        </value>
+        <statement name="DO0">
+          <block type="controls_openAnotherScreen" id="71[k4OyXyHg:2|McmT|R">
+            <value name="SCREEN">
+              <block type="text" id="By9Qf:Pi?^`6@05`9Qx)">
+                <field name="TEXT">Screen1</field>
+              </block>
+            </value>
+          </block>
+        </statement>
+        <value name="IF1">
+          <block type="logic_operation" id="=0rs_4{*Wm2*d7wx^l0@">
+            <field name="OP">OR</field>
+            <value name="A">
+              <block type="logic_compare" id="[El2[d*r`el]yA(0IkIa">
+                <field name="OP">NEQ</field>
+                <value name="A">
+                  <block type="lexical_variable_get" id="LWku#lOpbf`RcGVH`/;T">
+                    <field name="VAR">global username</field>
+                  </block>
+                </value>
+                <value name="B">
+                  <block type="lexical_variable_get" id=".-N+Rkd!;7Dd90Hb_l-M">
+                    <mutation>
+                      <eventparam name="tag"></eventparam>
+                    </mutation>
+                    <field name="VAR">tag</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <value name="B">
+              <block type="logic_compare" id="Hv*~/;pid2d_TSJ@{-Et">
+                <field name="OP">NEQ</field>
+                <value name="A">
+                  <block type="lexical_variable_get" id="{pWKy-0@MT^5?xw-wmzl">
+                    <field name="VAR">global password</field>
+                  </block>
+                </value>
+                <value name="B">
+                  <block type="lexical_variable_get" id="4Nm*N#na?}d+2qig)%9D">
+                    <mutation>
+                      <eventparam name="value"></eventparam>
+                    </mutation>
+                    <field name="VAR">value</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+          </block>
+        </value>
+        <statement name="DO1">
+          <block type="lexical_variable_set" id="m0eMwA(Q}nsi^M`*_(FE">
+            <field name="VAR">global username</field>
+            <value name="VALUE">
+              <block type="text" id="vdITjD#7xG@_X!*T|MD;">
+                <field name="TEXT"></field>
+              </block>
+            </value>
+            <next>
+              <block type="lexical_variable_set" id="ptk|RLc$jz|S3OK2Yc2l">
+                <field name="VAR">global password</field>
+                <value name="VALUE">
+                  <block type="text" id="e_J-+~mtj#P,t~Ph$)x@">
+                    <field name="TEXT"></field>
+                  </block>
+                </value>
+                <next>
+                  <block type="controls_openAnotherScreen" id="?yat;5K;(Vbj+8yZ:?~@">
+                    <value name="SCREEN">
+                      <block type="text" id="3a^uC#!/iVL8W71%Dn^`">
+                        <field name="TEXT">login</field>
+                      </block>
+                    </value>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </statement>
+  </block>
+  <yacodeblocks ya-version="186" language-version="27"></yacodeblocks>
+</xml>

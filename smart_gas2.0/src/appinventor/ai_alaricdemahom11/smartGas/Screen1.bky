@@ -1,0 +1,494 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="global_declaration" id="})/`_GjG0n]OsMt~rrLp" x="0" y="0">
+    <field name="NAME">threshT</field>
+    <value name="VALUE">
+      <block type="math_number" id="cg1OhF6DJ#Q!$%t^fhxa">
+        <field name="NUM">40</field>
+      </block>
+    </value>
+  </block>
+  <block type="global_declaration" id="6mHxo~wHzwgS2jq|z)}v" x="0" y="53">
+    <field name="NAME">threshH</field>
+    <value name="VALUE">
+      <block type="math_number" id="bnr)ap,~hJk:9.:Jg`7:">
+        <field name="NUM">75</field>
+      </block>
+    </value>
+  </block>
+  <block type="global_declaration" id="pGZq6O.2Xm57!4hTjRi~" x="0" y="106">
+    <field name="NAME">threshG</field>
+    <value name="VALUE">
+      <block type="math_number" id="H#c~38a~dXo#_I%k,QsG">
+        <field name="NUM">400</field>
+      </block>
+    </value>
+  </block>
+  <block type="component_event" id=":vAzvrjWol=!/FXIm/~g" x="0" y="159">
+    <mutation component_type="Form" is_generic="false" instance_name="Screen1" event_name="Initialize"></mutation>
+    <field name="COMPONENT_SELECTOR">Screen1</field>
+    <statement name="DO">
+      <block type="component_method" id="aUUfW2ZfAwunSnBhjEe9">
+        <mutation component_type="FirebaseDB" method_name="GetValue" is_generic="false" instance_name="FirebaseDB1"></mutation>
+        <field name="COMPONENT_SELECTOR">FirebaseDB1</field>
+        <value name="ARG0">
+          <block type="text" id="*TH=A#A#?l)tksaF0SKw">
+            <field name="TEXT">Humidity</field>
+          </block>
+        </value>
+        <value name="ARG1">
+          <block type="lexical_variable_get" id="v3=#jph^.3@9Y;~Zzk%v">
+            <field name="VAR">global Humidity</field>
+          </block>
+        </value>
+        <next>
+          <block type="component_method" id="%/?jLOWI7PuCIxulK+Hu">
+            <mutation component_type="FirebaseDB" method_name="GetValue" is_generic="false" instance_name="FirebaseDB1"></mutation>
+            <field name="COMPONENT_SELECTOR">FirebaseDB1</field>
+            <value name="ARG0">
+              <block type="text" id="6eRg|X63;`:r_qJhg(in">
+                <field name="TEXT">Temperature</field>
+              </block>
+            </value>
+            <value name="ARG1">
+              <block type="lexical_variable_get" id="I[4J}Vt},,7$jS;vdNO$">
+                <field name="VAR">global Temperature</field>
+              </block>
+            </value>
+            <next>
+              <block type="component_method" id="?1V`J`aZw1LV7nDv/v}p">
+                <mutation component_type="FirebaseDB" method_name="GetValue" is_generic="false" instance_name="FirebaseDB1"></mutation>
+                <field name="COMPONENT_SELECTOR">FirebaseDB1</field>
+                <value name="ARG0">
+                  <block type="text" id=",-ukX*r`W}I~U{2uww1-">
+                    <field name="TEXT">mq2</field>
+                  </block>
+                </value>
+                <value name="ARG1">
+                  <block type="lexical_variable_get" id="B9(%~}9|^!8jN(zY4{oi">
+                    <field name="VAR">global mq2</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="component_set_get" id="}ldZN_SWs-4[|Jv0?yjI">
+                    <mutation component_type="TextBox" set_or_get="set" property_name="Text" is_generic="false" instance_name="TextBox1"></mutation>
+                    <field name="COMPONENT_SELECTOR">TextBox1</field>
+                    <field name="PROP">Text</field>
+                    <value name="VALUE">
+                      <block type="lexical_variable_get" id="Z+g1iCKYd7:+ybDTlC]G">
+                        <field name="VAR">global Temperature</field>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="component_set_get" id="/a{fpeaY`U6LT4GJ~Vf|">
+                        <mutation component_type="TextBox" set_or_get="set" property_name="Text" is_generic="false" instance_name="TextBox2"></mutation>
+                        <field name="COMPONENT_SELECTOR">TextBox2</field>
+                        <field name="PROP">Text</field>
+                        <value name="VALUE">
+                          <block type="lexical_variable_get" id="@hym:/K*Wl{gn8GTZNh$">
+                            <field name="VAR">global Humidity</field>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="component_set_get" id="@jb[CcOuO*cAd~`=8tKz">
+                            <mutation component_type="TextBox" set_or_get="set" property_name="Text" is_generic="false" instance_name="TextBox3"></mutation>
+                            <field name="COMPONENT_SELECTOR">TextBox3</field>
+                            <field name="PROP">Text</field>
+                            <value name="VALUE">
+                              <block type="lexical_variable_get" id="|q`YZ9U?hL_Gq2%N36pH">
+                                <field name="VAR">global mq2</field>
+                              </block>
+                            </value>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="component_event" id="!CcRNNDoyl@kQRtA5YH8" x="0" y="534">
+    <mutation component_type="Button" is_generic="false" instance_name="Button2" event_name="Click"></mutation>
+    <field name="COMPONENT_SELECTOR">Button2</field>
+    <statement name="DO">
+      <block type="controls_openAnotherScreen" id="g3T_qAIJZQAt(RJw=uBw">
+        <value name="SCREEN">
+          <block type="text" id="=iqH9MlF25.]it,EcHMn">
+            <field name="TEXT">login</field>
+          </block>
+        </value>
+      </block>
+    </statement>
+  </block>
+  <block type="global_declaration" id="h1bKPIbdP/cqGm405e(|" x="0" y="624">
+    <field name="NAME">Temperature</field>
+    <value name="VALUE">
+      <block type="math_number" id="s%bb!oc6-,NLa6mQ^?H/">
+        <field name="NUM">0</field>
+      </block>
+    </value>
+  </block>
+  <block type="global_declaration" id="v7@2e#8e*13,+gpO6q!6" x="0" y="677">
+    <field name="NAME">Humidity</field>
+    <value name="VALUE">
+      <block type="math_number" id="CLuECjNqu,0[YiEso7R3">
+        <field name="NUM">0</field>
+      </block>
+    </value>
+  </block>
+  <block type="global_declaration" id="p$?(L5UmZ1M{zj~jFKTf" x="0" y="730">
+    <field name="NAME">mq2</field>
+    <value name="VALUE">
+      <block type="math_number" id="%n(IO4/JRE4*}+UC^@4}">
+        <field name="NUM">0</field>
+      </block>
+    </value>
+  </block>
+  <block type="component_event" id="--FM?rQaW~XWT9];rMs$" x="0" y="783">
+    <mutation component_type="FirebaseDB" is_generic="false" instance_name="FirebaseDB1" event_name="GotValue"></mutation>
+    <field name="COMPONENT_SELECTOR">FirebaseDB1</field>
+    <statement name="DO">
+      <block type="controls_if" id="b30l+sIqT{%bqU#iT7Ox">
+        <value name="IF0">
+          <block type="logic_compare" id="4g}9mz/EgUFWIwo7,8N@">
+            <field name="OP">EQ</field>
+            <value name="A">
+              <block type="lexical_variable_get" id="rE9E6pVGiVx}CE4r@d.V">
+                <mutation>
+                  <eventparam name="tag"></eventparam>
+                </mutation>
+                <field name="VAR">tag</field>
+              </block>
+            </value>
+            <value name="B">
+              <block type="text" id=":V}Aj*js/Pl3maw#i$k3">
+                <field name="TEXT">Temperature</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <statement name="DO0">
+          <block type="lexical_variable_set" id="5N!GbfSzbk#p2^(S.H2J">
+            <field name="VAR">global Temperature</field>
+            <value name="VALUE">
+              <block type="lexical_variable_get" id="bD{%x7H1?Lzg@ER]bR9}">
+                <mutation>
+                  <eventparam name="value"></eventparam>
+                </mutation>
+                <field name="VAR">value</field>
+              </block>
+            </value>
+            <next>
+              <block type="component_set_get" id="2ZsS$/Ls3vE@FytkzJ8)">
+                <mutation component_type="TextBox" set_or_get="set" property_name="Text" is_generic="false" instance_name="TextBox1"></mutation>
+                <field name="COMPONENT_SELECTOR">TextBox1</field>
+                <field name="PROP">Text</field>
+                <value name="VALUE">
+                  <block type="lexical_variable_get" id="5iX]jO(AqE,z={zH+]wB">
+                    <field name="VAR">global Temperature</field>
+                  </block>
+                </value>
+              </block>
+            </next>
+          </block>
+        </statement>
+        <next>
+          <block type="controls_if" id="L!n-)7r*Pb*Z^{6C,VT8">
+            <value name="IF0">
+              <block type="logic_compare" id="yEP$/JNK}K;E);S/DIQq">
+                <field name="OP">EQ</field>
+                <value name="A">
+                  <block type="lexical_variable_get" id="2T5lKg:n(d,^ZRC!(FPv">
+                    <mutation>
+                      <eventparam name="tag"></eventparam>
+                    </mutation>
+                    <field name="VAR">tag</field>
+                  </block>
+                </value>
+                <value name="B">
+                  <block type="text" id="DtFO2Eh1gVKz!7LpKZYp">
+                    <field name="TEXT">Humidity</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <statement name="DO0">
+              <block type="lexical_variable_set" id="ER=)/IoO9XC0,sQ^gtj7">
+                <field name="VAR">global Humidity</field>
+                <value name="VALUE">
+                  <block type="lexical_variable_get" id="$;sa^vA0ugG*T%*iwNzP">
+                    <mutation>
+                      <eventparam name="value"></eventparam>
+                    </mutation>
+                    <field name="VAR">value</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="component_set_get" id="=LXomvCOLGeGH!(T2^ar">
+                    <mutation component_type="TextBox" set_or_get="set" property_name="Text" is_generic="false" instance_name="TextBox2"></mutation>
+                    <field name="COMPONENT_SELECTOR">TextBox2</field>
+                    <field name="PROP">Text</field>
+                    <value name="VALUE">
+                      <block type="lexical_variable_get" id="npDa4(CL1aC#CMuiF*{`">
+                        <field name="VAR">global Humidity</field>
+                      </block>
+                    </value>
+                  </block>
+                </next>
+              </block>
+            </statement>
+            <next>
+              <block type="controls_if" id="d1R=APTJPQ(akjx_$z5?">
+                <value name="IF0">
+                  <block type="logic_compare" id="H8/=$iQV_aD$EF1n4mi!">
+                    <field name="OP">EQ</field>
+                    <value name="A">
+                      <block type="lexical_variable_get" id="FLa_wo?wL9%Euq08vf.1">
+                        <mutation>
+                          <eventparam name="tag"></eventparam>
+                        </mutation>
+                        <field name="VAR">tag</field>
+                      </block>
+                    </value>
+                    <value name="B">
+                      <block type="text" id="KdQOeRta)zi:AJp.SZ,v">
+                        <field name="TEXT">mq2</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <statement name="DO0">
+                  <block type="lexical_variable_set" id="Z!%NQ##YnZ=Q9_kO~-:F">
+                    <field name="VAR">global mq2</field>
+                    <value name="VALUE">
+                      <block type="lexical_variable_get" id="k8Y|bNYXhCN.NI;.3kKP">
+                        <mutation>
+                          <eventparam name="value"></eventparam>
+                        </mutation>
+                        <field name="VAR">value</field>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="component_set_get" id="$ejgj?h=|bXriOLC}7Su">
+                        <mutation component_type="TextBox" set_or_get="set" property_name="Text" is_generic="false" instance_name="TextBox3"></mutation>
+                        <field name="COMPONENT_SELECTOR">TextBox3</field>
+                        <field name="PROP">Text</field>
+                        <value name="VALUE">
+                          <block type="lexical_variable_get" id="VLGVGEL@o_4=4OPSEjQ/">
+                            <field name="VAR">global mq2</field>
+                          </block>
+                        </value>
+                      </block>
+                    </next>
+                  </block>
+                </statement>
+                <next>
+                  <block type="controls_if" id="a55e5@YJUVXhjePjA+2$">
+                    <mutation else="1"></mutation>
+                    <value name="IF0">
+                      <block type="math_compare" id=";`v;EJHK$+`waUo#v`k5">
+                        <field name="OP">GT</field>
+                        <value name="A">
+                          <block type="lexical_variable_get" id="?8k-KJXv3dMeJEgA,4=}">
+                            <field name="VAR">global mq2</field>
+                          </block>
+                        </value>
+                        <value name="B">
+                          <block type="lexical_variable_get" id="_S_ga@N]bmfqa=ii^A+j">
+                            <field name="VAR">global threshG</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <statement name="DO0">
+                      <block type="component_set_get" id="+`H.!6ic8+O;6mW:m]hm">
+                        <mutation component_type="TextBox" set_or_get="set" property_name="TextColor" is_generic="false" instance_name="TextBox3"></mutation>
+                        <field name="COMPONENT_SELECTOR">TextBox3</field>
+                        <field name="PROP">TextColor</field>
+                        <value name="VALUE">
+                          <block type="color_red" id="No~eIksBTZCKFvZ9,*#@">
+                            <field name="COLOR">#ff0000</field>
+                          </block>
+                        </value>
+                      </block>
+                    </statement>
+                    <statement name="ELSE">
+                      <block type="component_set_get" id="7Ew`/@yVz0RZ5MU^(PO_">
+                        <mutation component_type="TextBox" set_or_get="set" property_name="TextColor" is_generic="false" instance_name="TextBox3"></mutation>
+                        <field name="COMPONENT_SELECTOR">TextBox3</field>
+                        <field name="PROP">TextColor</field>
+                        <value name="VALUE">
+                          <block type="color_red" id="c92AM%c=0RUZKFBGcQ0%">
+                            <field name="COLOR">#000000</field>
+                          </block>
+                        </value>
+                      </block>
+                    </statement>
+                    <next>
+                      <block type="controls_if" id="Q$w]8D91IU9-cp,i(CzQ">
+                        <mutation else="1"></mutation>
+                        <value name="IF0">
+                          <block type="math_compare" id="%GQTB;qB_V-j#[z5D/41">
+                            <field name="OP">GT</field>
+                            <value name="A">
+                              <block type="lexical_variable_get" id="F_bhZ#~%sxmfw)e(-Mf[">
+                                <field name="VAR">global Humidity</field>
+                              </block>
+                            </value>
+                            <value name="B">
+                              <block type="lexical_variable_get" id="p`:{9!)tQo%JZ)ocG|+G">
+                                <field name="VAR">global threshH</field>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                        <statement name="DO0">
+                          <block type="component_set_get" id="aolDF05ELpL}jCg)jGf[">
+                            <mutation component_type="TextBox" set_or_get="set" property_name="TextColor" is_generic="false" instance_name="TextBox2"></mutation>
+                            <field name="COMPONENT_SELECTOR">TextBox2</field>
+                            <field name="PROP">TextColor</field>
+                            <value name="VALUE">
+                              <block type="color_red" id="d{l@mFvMEW2KukM]_!M7">
+                                <field name="COLOR">#ff0000</field>
+                              </block>
+                            </value>
+                          </block>
+                        </statement>
+                        <statement name="ELSE">
+                          <block type="component_set_get" id="#FTva=*+i[%yfdbf`ix$">
+                            <mutation component_type="TextBox" set_or_get="set" property_name="TextColor" is_generic="false" instance_name="TextBox2"></mutation>
+                            <field name="COMPONENT_SELECTOR">TextBox2</field>
+                            <field name="PROP">TextColor</field>
+                            <value name="VALUE">
+                              <block type="color_red" id="L|UW:,~d~{UFW5m(]B[E">
+                                <field name="COLOR">#000000</field>
+                              </block>
+                            </value>
+                          </block>
+                        </statement>
+                        <next>
+                          <block type="controls_if" id="RMW-DSa~Oa]}/Emu5qkt">
+                            <mutation else="1"></mutation>
+                            <value name="IF0">
+                              <block type="math_compare" id="X_F_.f{wz-GWt]bVVSk9">
+                                <field name="OP">GT</field>
+                                <value name="A">
+                                  <block type="lexical_variable_get" id="CrZ/vTwD+=j=$U$Jycz-">
+                                    <field name="VAR">global Temperature</field>
+                                  </block>
+                                </value>
+                                <value name="B">
+                                  <block type="lexical_variable_get" id="@Eq2PYH)A%HVmM$4NGq(">
+                                    <field name="VAR">global threshT</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                            <statement name="DO0">
+                              <block type="component_set_get" id=",?$nNGH#Mh|}|20=Z#;A">
+                                <mutation component_type="TextBox" set_or_get="set" property_name="TextColor" is_generic="false" instance_name="TextBox1"></mutation>
+                                <field name="COMPONENT_SELECTOR">TextBox1</field>
+                                <field name="PROP">TextColor</field>
+                                <value name="VALUE">
+                                  <block type="color_red" id="Z9K@5d@WMU1}N(?wu33y">
+                                    <field name="COLOR">#ff0000</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </statement>
+                            <statement name="ELSE">
+                              <block type="component_set_get" id="NavY-Jpk[F$TbLReN]$P">
+                                <mutation component_type="TextBox" set_or_get="set" property_name="TextColor" is_generic="false" instance_name="TextBox1"></mutation>
+                                <field name="COMPONENT_SELECTOR">TextBox1</field>
+                                <field name="PROP">TextColor</field>
+                                <value name="VALUE">
+                                  <block type="color_red" id="%oyvE|)akr=$Bqwdcymd">
+                                    <field name="COLOR">#000000</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </statement>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="component_event" id="7=l(-~3x-oBUcxL5_+-G" x="1" y="1522">
+    <mutation component_type="FirebaseDB" is_generic="false" instance_name="FirebaseDB1" event_name="DataChanged"></mutation>
+    <field name="COMPONENT_SELECTOR">FirebaseDB1</field>
+    <statement name="DO">
+      <block type="component_method" id="!%hQW_|+X76*B-,%?2bz">
+        <mutation component_type="FirebaseDB" method_name="GetValue" is_generic="false" instance_name="FirebaseDB1"></mutation>
+        <field name="COMPONENT_SELECTOR">FirebaseDB1</field>
+        <value name="ARG0">
+          <block type="text" id="vRTNWt5Av6f~eiE@(`lz">
+            <field name="TEXT">Humidity</field>
+          </block>
+        </value>
+        <value name="ARG1">
+          <block type="lexical_variable_get" id="w[#.HOZ_RuNa|t%N!v:E">
+            <field name="VAR">global Humidity</field>
+          </block>
+        </value>
+        <next>
+          <block type="component_method" id="`k;V6wmJ+{:0K`ec*w);">
+            <mutation component_type="FirebaseDB" method_name="GetValue" is_generic="false" instance_name="FirebaseDB1"></mutation>
+            <field name="COMPONENT_SELECTOR">FirebaseDB1</field>
+            <value name="ARG0">
+              <block type="text" id="l;zN}tDIo;r-1;-k%AN/">
+                <field name="TEXT">Temperature</field>
+              </block>
+            </value>
+            <value name="ARG1">
+              <block type="lexical_variable_get" id="jTh:8iio/I?dL#x`e6/R">
+                <field name="VAR">global Temperature</field>
+              </block>
+            </value>
+            <next>
+              <block type="component_method" id="e8rq,(+Bgkt2KozcVq]i">
+                <mutation component_type="FirebaseDB" method_name="GetValue" is_generic="false" instance_name="FirebaseDB1"></mutation>
+                <field name="COMPONENT_SELECTOR">FirebaseDB1</field>
+                <value name="ARG0">
+                  <block type="text" id="Eyw_b@`7DRm8E8TjKC*(">
+                    <field name="TEXT">mq2</field>
+                  </block>
+                </value>
+                <value name="ARG1">
+                  <block type="lexical_variable_get" id="ik_MK5lV1uaCWi@36oUF">
+                    <field name="VAR">global mq2</field>
+                  </block>
+                </value>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="component_event" id="zhPV13!GvkDUI.+vl@Jm" x="0" y="1730">
+    <mutation component_type="Button" is_generic="false" instance_name="Button1" event_name="Click"></mutation>
+    <field name="COMPONENT_SELECTOR">Button1</field>
+    <statement name="DO">
+      <block type="controls_openAnotherScreen" id="lJ6hI_cq^#D93tK5u,FC">
+        <value name="SCREEN">
+          <block type="text" id="(?=L5UT^tv=7fYepL.n`">
+            <field name="TEXT">signup</field>
+          </block>
+        </value>
+      </block>
+    </statement>
+  </block>
+  <yacodeblocks ya-version="186" language-version="27"></yacodeblocks>
+</xml>

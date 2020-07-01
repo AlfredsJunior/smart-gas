@@ -1,0 +1,126 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="component_event" id="4CZ!utto0:Yd{r~H$]%h" x="-446" y="-403">
+    <mutation component_type="Button" is_generic="false" instance_name="Button1" event_name="Click"></mutation>
+    <field name="COMPONENT_SELECTOR">Button1</field>
+    <statement name="DO">
+      <block type="controls_if" id="aDL_JrAkp!})/RFT}^@/">
+        <value name="IF0">
+          <block type="logic_operation" id="X2(GJg3@Yd^)U|n~GGH7">
+            <field name="OP">AND</field>
+            <value name="A">
+              <block type="logic_compare" id=".Pdy%Gwqp2BRa(_3wr`A">
+                <field name="OP">NEQ</field>
+                <value name="A">
+                  <block type="component_set_get" id="Mp!{uPNjwGnn;#SZdpGW">
+                    <mutation component_type="TextBox" set_or_get="get" property_name="Text" is_generic="false" instance_name="TextBox1"></mutation>
+                    <field name="COMPONENT_SELECTOR">TextBox1</field>
+                    <field name="PROP">Text</field>
+                  </block>
+                </value>
+                <value name="B">
+                  <block type="text" id="MIcFK=i]!vi^T:!d~.lw">
+                    <field name="TEXT"></field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <value name="B">
+              <block type="logic_compare" id="im|,@oTY=joc,KBp{ruv">
+                <field name="OP">NEQ</field>
+                <value name="A">
+                  <block type="component_set_get" id="*Q{#xt)t]4c`t]ky0u_[">
+                    <mutation component_type="PasswordTextBox" set_or_get="get" property_name="Text" is_generic="false" instance_name="PasswordTextBox1"></mutation>
+                    <field name="COMPONENT_SELECTOR">PasswordTextBox1</field>
+                    <field name="PROP">Text</field>
+                  </block>
+                </value>
+                <value name="B">
+                  <block type="text" id="FDk]zjX!6*2~y6+sjdP?">
+                    <field name="TEXT"></field>
+                  </block>
+                </value>
+              </block>
+            </value>
+          </block>
+        </value>
+        <statement name="DO0">
+          <block type="component_method" id="y7pTW(o87A%GEWM4d,9J">
+            <mutation component_type="FirebaseDB" method_name="StoreValue" is_generic="false" instance_name="FirebaseDB1"></mutation>
+            <field name="COMPONENT_SELECTOR">FirebaseDB1</field>
+            <value name="ARG0">
+              <block type="component_set_get" id="JZ$QY]7|UcNkhwHs*rRq">
+                <mutation component_type="TextBox" set_or_get="get" property_name="Text" is_generic="false" instance_name="TextBox1"></mutation>
+                <field name="COMPONENT_SELECTOR">TextBox1</field>
+                <field name="PROP">Text</field>
+              </block>
+            </value>
+            <value name="ARG1">
+              <block type="component_set_get" id="vqlYbl`OAwrxA!%hbYHR">
+                <mutation component_type="PasswordTextBox" set_or_get="get" property_name="Text" is_generic="false" instance_name="PasswordTextBox1"></mutation>
+                <field name="COMPONENT_SELECTOR">PasswordTextBox1</field>
+                <field name="PROP">Text</field>
+              </block>
+            </value>
+            <next>
+              <block type="controls_openAnotherScreen" id="CFJw?yNDlFrU,560Ar.f">
+                <value name="SCREEN">
+                  <block type="text" id="0Z3~Wa|c|K$kZ7VT2DE{">
+                    <field name="TEXT">Screen1</field>
+                  </block>
+                </value>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </statement>
+  </block>
+  <block type="component_event" id="%dtoco2r4dxye,N4uYW_" x="-407" y="-203">
+    <mutation component_type="Button" is_generic="false" instance_name="Button2" event_name="Click"></mutation>
+    <field name="COMPONENT_SELECTOR">Button2</field>
+    <statement name="DO">
+      <block type="controls_if" id="tL,_|pHZt2N1$t[E2~nZ">
+        <value name="IF0">
+          <block type="logic_compare" id="f80!?isfg)iv%s]%!|/H">
+            <field name="OP">NEQ</field>
+            <value name="A">
+              <block type="component_set_get" id="H5AlfQnT-#;~)trP[2qr">
+                <mutation component_type="TextBox" set_or_get="get" property_name="Text" is_generic="false" instance_name="TextBox1"></mutation>
+                <field name="COMPONENT_SELECTOR">TextBox1</field>
+                <field name="PROP">Text</field>
+              </block>
+            </value>
+            <value name="B">
+              <block type="text" id="QWw8c.zOY#My;H0|LiS_">
+                <field name="TEXT"></field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <statement name="DO0">
+          <block type="component_method" id="Fn)t-F|cOlN#D:`!BR)N">
+            <mutation component_type="FirebaseDB" method_name="ClearTag" is_generic="false" instance_name="FirebaseDB1"></mutation>
+            <field name="COMPONENT_SELECTOR">FirebaseDB1</field>
+            <value name="ARG0">
+              <block type="component_set_get" id="r7ZZ2Z!rE_IwO~~~W-H3">
+                <mutation component_type="TextBox" set_or_get="get" property_name="Text" is_generic="false" instance_name="TextBox1"></mutation>
+                <field name="COMPONENT_SELECTOR">TextBox1</field>
+                <field name="PROP">Text</field>
+              </block>
+            </value>
+            <next>
+              <block type="controls_openAnotherScreen" id="uI2E2wFd#P42aI@A60.c">
+                <value name="SCREEN">
+                  <block type="text" id=")H)y4s07|(Hu;9t~Aa)y">
+                    <field name="TEXT">Screen1</field>
+                  </block>
+                </value>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </statement>
+  </block>
+  <yacodeblocks ya-version="186" language-version="27"></yacodeblocks>
+</xml>
